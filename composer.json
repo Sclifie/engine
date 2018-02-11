@@ -1,0 +1,30 @@
+{
+    "name": "web/engine",
+    "description": "little engine",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Web",
+            "email": "frgyvu@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type":"git",
+            "url":"https://github.com/web-development-courses/engine"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Web\\Engine\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/http-foundation" : "4.*",
+        "symfony/routing" : "4.*",
+        "symfony/http-kernel" : "4.*",
+        "web/engine" : "dev-master"
+    }
+}
