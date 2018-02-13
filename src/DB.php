@@ -6,6 +6,7 @@ use PDO;
 class DB
 {
     // параметры нужно получать из config.json
+
     private $servername;
     private $db_name;
     private $username;
@@ -13,10 +14,7 @@ class DB
 
     private function __construct()
     {
-//        $this->servername = 'localhost';
-//        $this->db_name = 'WildConcert';
-//        $this->username = 'root';
-//        $this->password = '';
+
     }
 
     protected static $_instance;

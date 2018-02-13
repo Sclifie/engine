@@ -24,20 +24,19 @@ class LittleCore
 
     public function handle(Request $request)
     {
+
         $this->matcher->getContext()->fromRequest($request);
 
         try {
             $request->attributes->add($this->matcher->match($request->getPathInfo()));
-
-
             $controller = $this->controllerResolver->getController($request);
             $arguments = $this->argumentResolver->getArguments($request, $controller);
 
             return call_user_func_array($controller, $arguments);
         } catch (ResourceNotFoundException $e) {
-            return new Response('Not Found', 404);
-        } catch (\Exception $e) {
-            return new Response('An error occurred', $e->getMessage());
-        }
+            return new Response('Not Found', 404);}
+//        } catch (\Exception $e) {
+//            return new Response('An error occurred', $e->getMessage());
+//        }
     }
 }
